@@ -1,0 +1,549 @@
+                                        N U M P Y
+
+                                       Lecture - 1
+
+what is Array ?
+ 
+    It a type of grid that contain values/data/information.
+
+What are the benifits of using numpy ?
+ 
+    It is faster than python list.
+    It consumes less memory.
+    Convenient to use.
+    Wide variety of mathematical functions
+               
+
+How to intall numpy ?
+
+    open cmd and type following command " pip intall numpy ".
+
+                                       Lecture - 2
+
+Difference between Numpy Array and python list .
+
+                                       LIST                              Numpy
+    Data type storage         -  Store all type of data          Store only one type of data
+    Importing Module          -  No need to import Module        Need to import Module
+    Numerical operation       -  less efficiency                 More efficient
+    Modification Cpabilities  -  Fast Modification               Less modification features
+    Memory                    -  Consume more memory             Consume less memory
+    Speed                     -  Slow                            Fast
+    Convenient to use         -  No                              Yes
+
+Note :- use " %timeit" for checking the time taken by single line
+        use " %timeit" for checking the time taken by whole program
+
+        Eg(jupyter notebook only): %timeit[j**4 for j in range(1,9)]
+            %timeit np.arange(1,9)**4             # will automaticall create array from 0 to 8 with it's 4 x value
+
+                                       Lecture - 3
+
+Zeros :- All element will be 0 .
+
+    import numpy as np
+    arr=np.zeros(5)
+    print(arr)    # [0. 0. 0. 0. 0.]
+
+    import numpy as np
+    arr2=np.zeros((2,3))
+    print(arr2)  # [[0. 0. 0.]
+                    [0. 0. 0.]]
+
+Ones :- All element will be 1 .
+
+    import numpy as np
+    arr=np.ones(5)
+    print(arr)    # [1. 1. 1. 1. 1.]
+
+    import numpy as np
+    arr2=np.ones((2,3))
+    print(arr2)  # [[1. 1. 1.]
+                    [1. 1. 1.]]
+
+Empty :- It will have previous memory data
+   
+    import numpy as np
+    arr=np.empty(4)
+    print(arr)        # [1.15964863e-311 0.00000000e+000 0.00000000e+000 0.00000000e+000]
+
+Range
+
+    import numpy as np
+    arr=np.arange(4)
+    print(arr)        # [0 1 2 3]
+
+    import numpy as np
+    arr2=np.arange(2,4)
+    print(arr2)       # [2 3]
+
+Diagonal :- Diagonal element will be one.
+
+    import numpy as np
+    arr2=np.eye(2,4)
+    print(arr2)     # [[1. 0. 0. 0.]
+                       [0. 1. 0. 0.]]
+    import numpy as np
+    arr2=np.eye(3)
+    print(arr2)    # [[1. 0. 0.]
+                      [0. 1. 0.]
+                      [0. 0. 1.]]
+
+LineSpace :- For defining gap between elements
+
+    import numpy as np
+    arr=np.linspace(0,10,num=5)
+    print(arr)    # [ 0.   2.5  5.   7.5 10. ]
+
+full()
+
+    import numpy as np
+    var2=np.full((2,3),6)
+    print(var2)    #[[6 6 6]
+                     [6 6 6]]
+
+                                       Lecture - 4
+
+Creating Random Arrays
+
+rand() :- Generate random values between 0-1 # ( 0 , 1 )
+
+    import numpy as np
+    var=np.random.rand(4)
+    print(var)     # [0.91593025 0.01190813 0.85558177 0.81019922]
+
+    import numpy as np
+    var2=np.random.rand(2,3)
+    print(var2)    # [[0.51297087 0.48351228 0.68450338]
+                      [0.91496834 0.84699081 0.33671447]]
+
+ randn() :- Generate random values close to 0 .
+
+    import numpy as np
+    var=np.random.randn(4)
+    print(var)    # [-0.68177913 -1.10831841 -0.23411673  0.07965709]
+
+    import numpy as np
+    var2=np.random.randn(2,4)
+    print(var2)   # [[ 0.86965618 -0.32575636  0.07544588  0.19528912]
+                     [-0.61621808 -0.10145494  0.85353056  0.15986424]]
+            
+ranf() :- Generate value in interval [ 0.0 , 1.0) # 1.0 not included . 
+
+    import numpy as np
+    var=np.random.ranf(2)
+    print(var)    # [0.82873282 0.66889413]
+
+    import numpy as np
+    var2=np.random.ranf((2,4))
+    print(var2)   # [[0.30385092 0.20896768 0.51071845 0.59841925]
+                     [0.69734812 0.83502079 0.86564227 0.4933178 ]]
+
+randint() :- Generate value between user defined range ( min , max , total ).
+
+    import numpy as np
+    var=np.random.randint(2,4,5)
+    print(var)        # [3 2 3 3 3]
+
+
+    import numpy as np
+    var2=np.random.randint(1,6,15)
+    print(var2)       # [5 4 1 1 2 1 2 3 5 5 5 2 4 5 4]
+
+                                       Lecture - 5
+
+Datatypes : bool_6 ( True or False )
+            int_ (c long int32 or int64 )
+            intc (c int int32 or int64 )
+            int8 (-128 to 127)
+            int16 (-32768 to 32767)
+            uint8 ( 0 to 255 )
+            uint16 ( 0 to 65535 ) 
+            float_ ( float64 double precision)
+            complex_ ( shorthand for complex128),etc
+
+import numpy as np
+var=np.array([1,2,3334,4])
+print("Data Type",var.dtype)    # Data Type int32
+
+import numpy as np
+var=np.array([1,2.0,3334,4])
+print("Data Type",var.dtype)    # Data Type float64
+
+import numpy as np
+var=np.array(["i","s","h","u"])
+print("Data Type",var.dtype)    # Data Type <U1
+
+import numpy as np
+var=np.array([2,"i","s","h","u",1,2])
+print("Data Type",var.dtype)    # Data Type <U11
+
+import numpy as np
+var=np.array([2,3,4],dtype=np.int8)
+print("Data Type",var.dtype)    # Data Type int8
+
+import numpy as np
+var=np.array([2,3,4])
+print("Data Type",var.dtype)   # Data Type int32 
+var2=np.int8(var)
+print("Data Type",var2.dtype)  # Data Type int8
+print(var)                     # [2 3 4]
+
+import numpy as np
+var=np.array([2,3,4])
+var2=var.astype(float)
+print(var)       # [2 3 4]
+print(var2)      # [2. 3. 4.]
+
+                                       Lecture - 6
+
+Arithmatic Operatins
+
+    import numpy as np
+    a=np.array([1,2,3,4])
+    a=a+5
+    print(a)  # [6 7 8 9]
+
+    import numpy as np
+    a=np.array([1,2,3,4])
+    a=a-5
+    print(a)  # [-4 -3 -2 -1]
+
+    import numpy as np
+    a=np.array([1,2,3,4])
+    a=a/5
+    print(a)  # [0.2 0.4 0.6 0.8]
+
+    import numpy as np
+    a=np.array([11,12,13,14])
+    a=a%5
+    print(a)  # [1 2 3 4]
+
+    import numpy as np
+    a=np.array([11,12,13,14])
+    a=a//5
+    print(a)  # [2 2 2 2]
+
+add()
+
+    import numpy as np
+    a=np.array([1,2,3,4])
+    b=np.array([5,6,7,8])
+    print(np.add(a,b))   # [6 8 10 12]
+
+subtract()
+
+    import numpy as np
+    a=np.array([1,2,3,4])
+    b=np.array([5,6,7,8])
+    print(np.subtract(a,b))  # [-4 -4 -4 -4]
+
+multiply()
+
+    import numpy as np
+    a=np.array([1,2,3,4])
+    b=np.array([5,6,7,8])
+    print(np.multiply(a,b))  # [ 5 12 21 32]
+
+divide()
+
+    import numpy as np
+    a=np.array([1,2,3,4])
+    b=np.array([5,6,7,8])
+    print(np.divide(a,b))   # [0.2        0.33333333 0.42857143 0.5       ]
+
+floor_divide()
+
+    import numpy as np
+    a=np.array([11,2,13,4])
+    b=np.array([5,6,7,8])
+    print(np.floor_divide(a,b))   # [2 0 1 0]
+
+
+mod()
+
+    import numpy as np
+    a=np.array([1,2,3,4])
+    b=np.array([5,6,7,8])
+    print(np.mod(a,b))     # [1 2 3 4]
+
+power()
+
+    import numpy as np
+    a=np.array([1,2,3,4])
+    b=np.array([5,6,7,8])
+    print(np.power(a,b))   # [    1    64  2187 65536]
+
+reciprocal()
+
+    import numpy as np
+    a=np.array([21,2,3,4])
+    print(np.reciprocal(a))    # [0 0 0 0]
+
+    import numpy as np
+    a=np.array([1,2,3,4])
+    b=np.array([5,6,7,8])
+    print(np.reciprocal(a,b))   # [1 0 0 0]
+
+tranpose()
+
+import numpy as np
+var=np.array([1,2,3,4])
+print(np.transpose(var))         # [1 2 3 4]
+var2=np.array([[1,2,3],[5,6,7]])
+print(np.transpose(var2))        # [[1 5]
+                                    [2 6]
+                                    [3 7]]
+
+flatten()
+
+    import numpy as np
+    var=np.array([1,2,3,4])
+    print(var.flatten())              # [1 2 3 4 ]
+    var2=np.array([[1,2,3],[5,6,7]]) 
+    print(var2.flatten())             # [1 2 3 4 5 6 7]
+
+for 2D
+
+import numpy as np
+a=np.array([[1,2,3,4],[1,2,3,4]])
+b=np.array([[1,2,3,4],[1,2,3,4]])
+print(a+b)   # [[2 4 6 8]
+                [2 4 6 8]]
+print(a-b)   # [[0 0 0 0]
+                [0 0 0 0]]
+print(a*b)   # [[ 1  4  9 16]
+                [ 1  4  9 16]]
+print(a%b)   # [[0 0 0 0]
+                [0 0 0 0]]
+print(a/b)   # [[1. 1. 1. 1.]
+                [1. 1. 1. 1.]]
+print(a//b)  # [[1 1 1 1]
+                [1 1 1 1]]
+Note :- We can do operations using particular functions also
+
+                                       Lecture - 7
+
+Arithmatic functions
+
+sqrt()
+
+    import numpy as np
+    var=np.array([3,5,1,6])
+    print(np.sqrt(var))   # [1.73205081 2.23606798 1.         2.44948974]
+
+    import numpy as np
+    var2=np.array([[1,2,3,1],[3,5,1,6]])
+    print(np.sqrt(var2))   # [[1.         1.41421356 1.73205081 1.        ]
+                            [1.73205081 2.23606798 1.         2.44948974]]
+
+sin() : sin(x)
+
+    import numpy as np
+    var=np.array([3,90,0,6])
+    print(np.sqrt(var))   # [ 0.14112001  0.89399666  0.         -0.2794155 ]
+
+    import numpy as np
+    var2=np.array([[1,2,3,1],[3,5,1,6]])
+    print(np.sqrt(var2))   # [[ 0.84147098  0.90929743  0.14112001  0.84147098]
+                              [ 0.14112001 -0.95892427  0.84147098 -0.2794155 ]]
+
+cos() : cos(x)
+
+    import numpy as np
+    var=np.array([3,90,0,6])
+    print(np.sqrt(var))   # [-0.9899925  -0.44807362  1.          0.96017029]
+
+    import numpy as np
+    var2=np.array([[1,2,3,1],[3,5,1,6]])
+    print(np.sqrt(var2))   # [[ 0.54030231 -0.41614684 -0.9899925   0.54030231]
+                              [-0.9899925   0.28366219  0.54030231  0.96017029]]
+
+cumsum()
+
+    import numpy as np
+    var=np.array([1,2,3])
+    print(np.cumsum(var))   # [1 3 6]        # [ 1 1+2 1+2+3 ]
+
+    import numpy as np
+    var=np.array([1,2,3])
+    print(np.cumsum(var))   # [ 1  3  6 10]  # [ 1 1+2 1+2+3 1+2+3+4 ]
+
+min()
+
+    import numpy as np
+    var=np.array([1,2,3,1,0,6,8,3,4])
+    print(np.min(var))       # 0
+
+max()
+
+    import numpy as np
+    var=np.array([1,2,3,1,0,6,8,3,4])
+    print(np.max(var))      # 8
+
+argmin()/argmax() : give position of min / max term
+
+    import numpy as np
+    var=np.array([1,2,3,1,0,6,8,3,4,0])
+    print(np.argmin(var))   # 4
+    print(np.argmax(var))   # 6
+
+axis = 0   #  According to column
+axis = 1   #  According to row
+
+    import numpy as np
+    var=np.array([[1,2,3,1],[3,5,1,6]])
+    print(np.min(var,axis=1))  # [1 1]
+    print(np.max(var,axis=1))  # [3 6]
+    print(np.min(var,axis=0))  # [1 2 1 1]
+    print(np.max(var,axis=0))  # [3 5 3 6]
+
+    import numpy as np
+    var=np.array([[1,2,3,1],[3,5,1,6]])
+    print(np.argmin(var,axis=1))    # [0 2]
+    print(np.argmax(var,axis=1))    # [2 3]
+    print(np.argmin(var,axis=0))    # [0 0 1 0]
+    print(np.argmax(var,axis=0))    # [1 1 0 1]
+
+                                       Lecture - 8
+
+
+Shape
+
+    import numpy as np
+    a=np.array([1,2,3,4])
+    b=np.array([[1,2,3,4],[1,2,3,4]])
+    print(a.shape)         # (4,)
+    print(b.shape)         # (2, 4)
+
+ndmin
+
+    import numpy as np
+    a=np.array([1,2,3,4],ndmin=3)
+    print(a)               # [[[1 2 3 4]]]
+    print(a.shape)         # (1, 1, 4)   #(number of rows in each dimensional array)
+    print(a.ndim)          # 3
+
+reshape
+
+    import numpy as np
+    a=np.array([1,2,3,4,5,6])
+    print(a.ndim,a.shape)     #1 (6,)
+    x=a.reshape(2,3)
+    print(x)                  # [[1 2 3]
+                                [4 5 6]]
+    print(x.ndim,x.shape)     # 2 (2, 3)
+
+
+    import numpy as np
+    b=np.array([1,2,3,4,5,6,7,8,9,10,11,12])
+    print(b.ndim,b.shape)    # 1 (12,)
+    c=b.reshape(2,3,2)
+    print(c)                 # [[[ 1  2]
+                                [ 3  4]
+                                [ 5  6]]
+
+                                [[ 7  8]
+                                [ 9 10]
+                                [11 12]]] 
+    print(b.ndim,b.shape)    # 3 (2, 3, 2)
+    d=c.reshape(12)
+    h=c.reshape(-1)
+    print(d)                 # [ 1  2  3  4  5  6  7  8  9 10 11 12]
+    print(h)                 # [ 1  2  3  4  5  6  7  8  9 10 11 12]
+
+                                       Lecture - 9
+
+Broadcasting
+
+eg: import numpy as py
+    a=np.array([1,2,3])
+    a=np.array([1,2])
+    print(a+b)    # broadcasting error
+
+    import numpy as py
+    a=np.array([1,2,3])
+    b=np.array([1,2,3])
+    print(a+b)    # [2 4 6]
+
+Rules to remember while applying operation :
+
+    1. Same Dimension : compare dimension from right side
+    2. If we have two dimensions (1x3) and (3x1) so both should have 1 atleast in the end or both must be same.
+
+Note : It will give output as (3x3) which is the maximum dimension from both the dimensions.
+
+import numpy as np
+a=np.array([1,2,3])
+b=np.array([[3],[2],[1]])
+print(a)          # [1 2 3]
+print(b)          # [[3]
+                     [2]
+                     [1]]
+print(a+b)        # [[4 5 6]
+                     [3 4 5]
+                     [2 3 4]]
+Note : a has (1x3) and b has (3x1) dimension having 1 on any of two right hand side ,
+       and resul will be maximum dimension from both the dimensions i.e (3x3)
+
+If a has (1x3) and b has (1x4) then it will through broadcasting error.
+If a has (1x3) and b has (3x4) then it will through broadcasting error.
+
+import numpy as np
+a=np.array([[1],[2]])          
+b=np.array([[1,2,3],[1,2,3]])
+print(a)       # [[1]
+                  [2]]                
+print(b        # [[1 2 3]
+                  [1 2 3]]
+print(a+b)     # [[2 3 4]
+                  [3 4 5]]
+print(b+a)     # [[2 3 4]
+                  [3 4 5]]
+Note : a has (2x1) and b has (2x3) dimension having 1 on any of two right hand side ,
+       and resul will be maximum dimension from both the dimensions i.e (2x3)
+
+                                       Lecture - 10 (same as list)
+
+                                       Lecture - 11
+
+nditer()  -  use for fetching all element without using nested for loop
+
+    import numpy as np
+    a=np.array([[[1,2],[5,6]]])
+    for i in np.nditer(a):
+        print(i)    # 1
+                      2
+                      5 
+                      6
+
+    import numpy as np
+    a=np.array([[[1,2],[5,6]]])
+    for i in np.nditer(a,flags=["buffered"],op_dtypes=["S"]):
+        print(i)    # b'1'
+                     b'2'
+                     b'5'
+                     b'6'    # converted in string
+
+ndenumerate()  :- use to print index along with iteration
+
+    import numpy as np
+    a=np.array([[[1,2],[5,6]]])
+    for i,d in np.ndenumerate(a):
+        print(i,d) # (0, 0, 0) 1
+                     (0, 0, 1) 2
+                     (0, 1, 0) 5
+                     (0, 1, 1) 6
+ 
+                                       Lecture - 12
+
+
+
+
+
+
+
+
+For more dimnsion Take input in tuple : 
+
+zeros() , ones() , ranf() , full()

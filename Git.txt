@@ -1,0 +1,99 @@
+Git : track the history , collaboration
+GitHub : store and manage code using git
+
+Git Configuration
+
+	git config --global user.name "Ishu Agrawal"
+	git config --global user.email "ishuagrawal124356@gmail.com"
+	git config --list
+
+ls (to show all files)
+
+ls -a (to show all files including hidden files)
+
+clone of a repo
+	
+	git clone <link>
+
+status ( git status )
+
+	untracked - new files ( before committing ) that git doesn't yet track
+
+	modified - changed
+
+	staged - file is ready to be committed ( whenever we have change the existing file i.e. modified or make new file i.e. in unchanged we need to add first to get staged )
+
+	unmodified - unchanged
+
+add - adds new or changed files in your working directory to the staging area
+	
+	git add <file name>
+
+	git add . ( for all the files)
+
+commit -  it is the record of change
+	
+	git commit -m "some message"
+
+push - upload local repo content to remote repo
+
+	git push origin main   ( pushing in main branch of origin(named) repository )
+
+for check commits : git log 
+
+init - used to create a new git repo
+
+	git init 
+	
+	git remote add origin <link>  ( add new remote means repo naming origin )
+ 
+	git remote -v  ( to verify )
+
+	git branch  ( to see branch )
+
+	git branch -M main ( to change branch name as main )
+	
+	git push origin main  (also we can write "git push -u origin main" and afterwards only need to write "git push" )
+
+brank
+
+	git branch
+
+	git branch -M main
+
+	git checkout <branch name>  ( navigate to other branch )
+
+	git checkout -b <branch name> ( to create new branch )
+
+	git branch -d <branch name> ( delete branch - must be on another branch to delete)
+
+Merging branch
+
+	(way 1)
+	git diff <branch name> ( to compare commits, branches, files, & more)
+
+	git merge <branch name> ( to merge 2 branches)
+
+	(way 2)
+	create a PR (in GitHub pull request)
+
+pull 
+
+	git pull origin main      ( used to fetch and download content from a remote repo and immediately update the local repo to mmatch that content )
+
+merge conflicts - an event that takes place when git is inable to automatically resolve difference in codes between two commits
+
+undo
+
+	staged changes
+		git reset <file name>
+		git reset                      ( for all files)
+
+	committed changes
+		git reset HEAD~1 ( for one )
+		git reset <commit hash> ( to change in vs code use "--hard" before hash)
+
+fork - for is a new repository that shares code and visibility settings with the original "upstream" repository. It is a rough copy.
+
+
+	

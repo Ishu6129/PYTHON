@@ -1,0 +1,11 @@
+First go to profreehost site and register.
+Goto mail and verify
+Create your domain name.
+Goto manage.
+Goto software -> appinstaller
+Install wordpress
+After that click on on your respective website and then write after your website name " /wp-admin "
+ishu Iishu1243@
+After login go to appearence from side pannel then select theme
+After than search for astra for web designing
+
